@@ -6,7 +6,7 @@
 /*   By: andgonca <andgonca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 21:28:06 by andgonca          #+#    #+#             */
-/*   Updated: 2022/11/04 20:58:36 by andgonca         ###   ########.fr       */
+/*   Updated: 2022/11/17 11:11:31 by andgonca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	int		len1;
 	int		len2;
 
-	len1 = strlen((char *)s1);
-	len2 = strlen((char *)s2);
+	len1 = ft_strlen((char *)s1);
+	len2 = ft_strlen((char *)s2);
 	str = (char *)malloc((len1 + len2 + 1) * sizeof(char));
 	if (!str)
 		return (NULL);

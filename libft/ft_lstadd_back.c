@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: andgonca <andgonca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/04 22:11:43 by andgonca          #+#    #+#             */
-/*   Updated: 2022/11/06 19:21:20 by andgonca         ###   ########.fr       */
+/*   Created: 2022/11/12 12:39:54 by andgonca          #+#    #+#             */
+/*   Updated: 2022/11/12 14:05:51 by andgonca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	int	c;
-	int	c1;
+	t_list	*elem;
 
-	c = 0;
-	c1 = ft_strlen(s);
-	while (c < c1)
+	elem = *lst;
+	if (*lst == NULL)
+		*lst = new;
+	else
 	{
-		f(c, s);
-		c++;
-		s++;
+		while (elem->next != NULL)
+			elem = elem->next;
+		elem->next = new;
 	}
 }
